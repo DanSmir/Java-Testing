@@ -1,4 +1,4 @@
-package com.example.tests;
+package com.example.model;
 
 public class GroupData {
 	public String name;

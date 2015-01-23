@@ -2,11 +2,14 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
+import com.example.model.GroupData;
+
 public class AlsoGroupCreationTests extends TestBase {
+	
   @Test
   public void testNonEmptyGroupCreation() throws Exception {
     openMainPage();
-    gotoGroupsPage();
+    gotoGroupPage();
     initNewGroupCreation();
     GroupData group = new GroupData();
     group.name = "group 1";
@@ -14,16 +17,16 @@ public class AlsoGroupCreationTests extends TestBase {
     group.footer = "footer 1";
 	fillGroupForm(group);
     submitGroupCreation();
-    returnToGroupsPage();
+    returnToHomePage();
   }
   
   @Test
   public void testEmptyGroupCreation() throws Exception {
     openMainPage();
-    gotoGroupsPage();
+    gotoGroupPage();
     initNewGroupCreation();
     fillGroupForm(new GroupData("", "", ""));
     submitGroupCreation();
-    returnToGroupsPage();
+    returnToHomePage();
   }
 }
